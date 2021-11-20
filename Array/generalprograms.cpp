@@ -1,6 +1,6 @@
 //Reverse an array.
 //1.iterative method.
-#include<bits/stdc++.h>
+/*#include<bits/stdc++.h>
 using namespace std;
 void reverse_array(int a[],int start,int end){
     while(start<end){
@@ -26,4 +26,4 @@ int main(){
     cout<<"print the reverse array"<<endl;
     print_Array(a,n);
     return 0;
-}
+}*/

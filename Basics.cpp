@@ -1,5 +1,5 @@
 //basic syntax
-/*#include<bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 int main(){
     int n,r,s=0;
@@ -11,4 +11,4 @@ int main(){
     }
     cout<<s<<endl;
     return 0;
-}*/
+}

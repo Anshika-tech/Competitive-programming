@@ -27,7 +27,7 @@ int main(){
     print_Array(a,n);
     return 0;
 }
-2.Recursive call method.*/
+2.Recursive call method.
 #include<bits/stdc++.h>
 using namespace std;
 void reverse_Array(int a[],int start,int end){
@@ -52,4 +52,43 @@ int main(){
     reverse_Array(a,0,n-1);
     cout<<"print the reverse array"<<endl;
     print_Array(a,n);   
+}*/
+//Rotation of array.
+//q Write a function to rotate an array of size n by d elements.
+//Method 1.
+#include<bits/stdc++.h>
+using namespace std;
+void RotateArray(int a[],int n){
+    int t=a[0];
+    for(int i=0;i<n;i++){
+      a[i]=a[i+1];
+    }
+    a[n-1]=t;
 }
+void RA(int a[],int d,int n){
+    for(int i=0;i<d;i++)
+        RotateArray(a,n);
+}
+void printArray(int a[],int n){
+    for(int i=0;i<n;i++)
+        cout<<a[i]<<" ";
+    cout<<"\n";
+}
+int main(){
+    int n,d;
+    cout<<"Enter the size of array"<<endl;
+    cin>>n;
+    int a[n];
+    for(int i=0;i<n;i++)
+        cin>>a[i];
+    cout<<"Enter the no of elements by which array rotated"<<endl;
+    cin>>d;
+    cout<<"starting Array:"<<endl;
+    printArray(a,n);
+    RA(a,d,n);
+    cout<<"Array after rotating "<<endl;
+    printArray(a,n);
+   return 0; 
+}
+
+

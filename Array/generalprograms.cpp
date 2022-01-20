@@ -56,7 +56,7 @@ int main(){
 //Rotation of array.
 //q Write a function to rotate an array of size n by d elements.
 //Method 1.
-#include<bits/stdc++.h>
+/*#include<bits/stdc++.h>
 using namespace std;
 void RotateArray(int a[],int n){
     int t=a[0];
@@ -90,5 +90,40 @@ int main(){
     printArray(a,n);
    return 0; 
 }
-
+*/
+//Method 2 (Reversal algorithm)
+#include<bits/stdc++.h>
+using namespace std;
+void reverseArray(int arr[],int start,int end){
+    while(start<end){
+        int t=arr[start];
+        arr[start]=arr[end];
+        arr[end]=t;
+        start++;
+        end--;
+    }
+}
+void rotate(int arr[],int d,int n){
+    if(d==0)
+        return;
+    d=d%n;
+    reverseArray(arr,0,d-1);
+    reverseArray(arr,d,n-1);
+    reverseArray(arr,0,n-1);
+}
+void printArray(int arr[],int n){
+    for(int i=0;i<n;i++)
+        cout<<arr[i]<<" ";
+    cout<<"\n";
+}
+int main(){
+    int arr[]={1,2,3,4,5,6,7};
+    int n=sizeof(arr)/sizeof(arr[0]);
+    int d;
+    cin>>d;
+    rotate(arr,d,n);
+    cout<<"Rotated Array"<<endl;
+    printArray(arr,n);
+    return 0;
+}
 

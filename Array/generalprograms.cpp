@@ -90,7 +90,7 @@ int main(){
     printArray(a,n);
    return 0; 
 }
-*/
+
 //Method 2 (Reversal algorithm)
 #include<bits/stdc++.h>
 using namespace std;
@@ -125,5 +125,29 @@ int main(){
     cout<<"Rotated Array"<<endl;
     printArray(arr,n);
     return 0;
+}*/
+//Move all negative numbers to beginning and positive to end with constant extra space
+#include<bits/stdc++.h>
+using namespace std;
+void move(int a[],int n){
+    int j=0;
+    for(int i=0;i<n;i++){
+        if(a[i]<0){
+            if(i!=j)
+               swap(a[i],a[j]);
+            j++;
+        }
+    }
 }
-
+int main(){
+    int n;
+    cin>>n;
+    int a[n];
+    for(int i=0;i<n;i++){
+        cin>>a[i];
+    }
+    move(a,n);
+    for(int i=0;i<n;i++){
+        cout<<a[i]<<" ";
+    }
+}

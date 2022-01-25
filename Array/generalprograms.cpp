@@ -161,7 +161,7 @@ Output:
 Explanation: 
 1, 2, 3, 4 and 5 are the
 elements which comes in the union set
-of both arrays. So count is 5.*/
+of both arrays. So count is 5.
 #include<bits/stdc++.h>
 using namespace std;
 int dounion(int a[],int n,int b[],int m)
@@ -187,4 +187,29 @@ int main(){
     }
     cout<<dounion(a,n,b,m);
 return 0;
+}
+*/
+//Given an array, rotate the array by one position in clock-wise direction.
+/*Input:
+N = 5
+A[] = {1, 2, 3, 4, 5}
+Output:
+5 1 2 3 4
+*/
+#include<bits/stdc++.h>
+using namespace std;
+void rotatecyclic(int a[],int n){
+    int t=a[n-1];
+    for(int i=n-1;i>0;i--){
+        a[i]=a[i-1];
+    }
+    a[0]=t;
+}
+int main(){
+    int a[]={1,2,3,4,5};
+    int n=sizeof(a)/sizeof(a[0]);
+    rotatecyclic(a,n);
+    for(int i=0;i<n;i++){
+        cout<<a[i]<<" ";
+    }
 }

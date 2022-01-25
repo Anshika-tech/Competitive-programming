@@ -127,7 +127,7 @@ int main(){
     return 0;
 }*/
 //Move all negative numbers to beginning and positive to end with constant extra space
-#include<bits/stdc++.h>
+/*#include<bits/stdc++.h>
 using namespace std;
 void move(int a[],int n){
     int j=0;
@@ -150,4 +150,41 @@ int main(){
     for(int i=0;i<n;i++){
         cout<<a[i]<<" ";
     }
+}*/
+//union of two arrays
+/*Input:
+5 3
+1 2 3 4 5
+1 2 3
+Output: 
+5
+Explanation: 
+1, 2, 3, 4 and 5 are the
+elements which comes in the union set
+of both arrays. So count is 5.*/
+#include<bits/stdc++.h>
+using namespace std;
+int dounion(int a[],int n,int b[],int m)
+{
+     set<int> s;
+        for(int i=0;i<n;i++){
+            s.insert(a[i]);
+        }
+         for(int i=0;i<m;i++){
+            s.insert(b[i]);
+        }
+        return s.size();
+}
+int main(){
+    int n,m;
+    cin>>n>>m;
+    int a[n],b[m];
+    for(int i=0;i<n;i++){
+        cin>>a[i];
+    }
+    for(int i=0;i<m;i++){
+        cin>>b[i];
+    }
+    cout<<dounion(a,n,b,m);
+return 0;
 }

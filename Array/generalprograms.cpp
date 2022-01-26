@@ -195,7 +195,7 @@ N = 5
 A[] = {1, 2, 3, 4, 5}
 Output:
 5 1 2 3 4
-*/
+
 #include<bits/stdc++.h>
 using namespace std;
 void rotatecyclic(int a[],int n){
@@ -212,4 +212,45 @@ int main(){
     for(int i=0;i<n;i++){
         cout<<a[i]<<" ";
     }
+}
+*/
+//Kadane's algorithm
+/*Given an array Arr[] of N integers. 
+Find the contiguous sub-array(containing at least one number) which has the maximum sum and return its sum.
+Example 1:
+
+Input:
+N = 5
+Arr[] = {1,2,3,-2,5}
+Output:
+9
+Explanation:
+Max subarray sum is 9
+of elements (1, 2, 3, -2, 5) which 
+is a contiguous subarray
+*/
+#include<bits/stdc++.h>
+using namespace std;
+int sub_array(int a[],int n){
+     int curr_sum=0;
+        int max_sum=INT_MIN;
+        for(int i=0;i<n;i++){
+            curr_sum=curr_sum+a[i];
+            if(curr_sum>max_sum){
+                max_sum=curr_sum;   
+            }
+            if(curr_sum<0){
+                curr_sum=0;
+            }
+        }
+        return max_sum;
+}
+int main(){
+    int n;
+    cin>>n;
+    int a[n];
+    for(int i=0;i<n;i++){
+        cin>>a[i];
+    }
+    cout<<sub_array(a,n);
 }

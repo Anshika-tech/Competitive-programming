@@ -31,11 +31,24 @@ class LinkedList{
             slow=slow.next;
             fast=fast.next.next;
             if(slow==fast){
+                System.out.println(slow.val);
                 return true;
+                
             }
         }
         return false;
     }
+    public  Node GetNode(int k) {
+		// if (k < 0 || k >= size) {
+		// 	throw new Exception("BkLOL k out of Range hai ");
+		// }
+		Node temp = head;
+		for (int i = 1; i <= k; i++) {
+			temp = temp.next;
+		}
+		return temp;
+	}
+
 }
 public class DetectCycle{
 
@@ -46,8 +59,7 @@ public class DetectCycle{
         ll.addlast(3);
         ll.addlast(4);
         ll.addlast(5);
-        ll.tail.next=ll.head.next.next;
-        
+        ll.tail.next=ll.GetNode(2); 
         System.out.println(ll.Detect(ll.head));
        
     }

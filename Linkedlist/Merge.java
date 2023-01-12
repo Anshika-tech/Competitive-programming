@@ -20,6 +20,7 @@ class LinkedList{
             tail.next=nn;
             tail=nn;
             size++;
+            
         }
     }
     public void display() {

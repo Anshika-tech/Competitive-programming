@@ -37,6 +37,29 @@ public class Left{
             }
         }
     }
+    static void right_(Node root){
+    
+        Queue<Node>q=new LinkedList<>();
+        if(root==null){
+            return;
+        }
+        q.add(root);
+        while(!q.isEmpty()){
+            int n=q.size();
+            for(int i=1;i<=n;i++){
+                Node rv=q.remove();
+                if(i==n){
+                    System.out.print(rv.data+" ");
+                }
+                if(rv.left!=null){
+                    q.add(rv.left);
+                }
+                if(rv.right!=null){
+                    q.add(rv.right);
+                }
+            }
+        }
+    }
      public static Node createNode(int data){
        Node nn=new Node();
        nn.data=data;
@@ -53,7 +76,11 @@ public class Left{
       tree.left.left=createNode(2);
       tree.left.right=createNode(4);
       tt.preorder(tree);
+      System.out.println();
       System.out.println("Left view of tree");
       tt.left_(tree);
+      System.out.println();
+      System.out.println("Right view of tree");
+      tt.right_(tree);
     }
 }

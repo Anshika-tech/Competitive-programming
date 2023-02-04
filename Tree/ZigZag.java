@@ -15,7 +15,7 @@ public class ZigZag{
      }
      public static void zigZagTraversal(Node root)
      {
-         //Add your code here.
+        
          LinkedList<Node>queue=new LinkedList<>();
          LinkedList<Node>help=new LinkedList<>();
          queue.add(root);
